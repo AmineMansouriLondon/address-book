@@ -1,0 +1,38 @@
+{
+  "addressSearch": {
+    "form": {
+      "addressId": "Address ID",
+      "search": "Search"
+    },
+    "messages": {
+      "noAddressFound": "No address found with the given ID."
+    }
+  },
+  "addressDetail": {
+    "title": "Address Details",
+    "fields": {
+      "addressee": "Addressee",
+      "street1": "Street 1",
+      "street2": "Street 2",
+      "town": "Town",
+      "county": "County",
+      "postcode": "Postcode"
+    }
+  },
+  "addressForm": {
+    "fields": {
+      "addressee": "Addressee",
+      "street1": "Street 1",
+      "street2": "Street 2",
+      "town": "Town",
+      "county": "County",
+      "postcode": "Postcode"
+    },
+    "errors": {
+      "required": "{{field}} is required.",
+      "maxLength": "Max length is {{max}} characters.",
+      "minLength": "Min length is {{min}} characters."
+    },
+    "submit": "Submit"
+  }
+}

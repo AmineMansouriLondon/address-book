@@ -1,27 +1,70 @@
-# AddressBook
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+# Address Book Angular Application
 
-## Development server
+## Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This Angular application interacts with a .NET API to manage addresses. It allows users to create new addresses and fetch existing addresses using their ID. The project demonstrates component-based architecture, state management with NgRx, and responsive design.
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Address Form**
+  - Input validation (required fields, max/min length)
+  - Submit address data to the backend API
+  - Loading spinner during submission
 
-## Build
+- **Address Search**
+  - Enter an address ID to fetch address details
+  - Display address details in a separate component
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Address Detail**
+  - Display detailed address information
 
-## Running unit tests
+- **State Management**
+  - Manage address state with NgRx
+  - Actions, reducers, effects, and selectors for address operations
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Notifications**
+  - Use Angular Material’s MatSnackBar for success/error notifications
 
-## Running end-to-end tests
+## Installation
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Prerequisites
 
-## Further help
+- Node.js and npm
+- Angular CLI
+- .NET 8.0 (for the provided API)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Setup
+
+1. **Install Dependencies**
+
+    ```bash
+    npm install
+    ```
+
+2. **Run the Angular Application**
+
+    ```bash
+    ng serve
+    ```
+
+3. **Run the .NET Backend**
+
+    Ensure the .NET backend is running on `http://localhost:5062`.
+
+    ```bash
+    cd path/to/dotnet/project
+    dotnet run
+    ```
+
+## Usage
+
+- Navigate to `http://localhost:4200` in your web browser.
+- Use the **Address Form** to create a new address.
+- Use the **Address Search** to fetch and display an address by its ID.
+
+## Potential Enhancements
+
+- **UI/UX**: Improve validation feedback, responsive design, styling consistency and use routing/modals.
+- **Code Quality**: Add unit tests, improve error handling, enhance documentation, add code comments, and stricter typing.
+- **Features**: Support multiple languages, implement an advanced notification system, and allow user profile management.

@@ -1,0 +1,79 @@
+<div class="form-container" *ngIf="{ addAddressLoading: addAddressLoading$ | async } as data">
+  <mat-card class="address-form-container">
+    <form [formGroup]="addressForm" (ngSubmit)="onSubmit()">
+      <div class="form-field">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>{{ 'addressForm.fields.addressee' | translate }}</mat-label>
+          <input matInput id="addressee" formControlName="addressee" />
+          <mat-error *ngIf="addressForm.controls['addressee'].invalid && addressForm.controls['addressee'].touched">
+            <span *ngIf="addressForm.controls['addressee'].errors?.required">{{ 'addressForm.errors.required' | translate: { field: 'addressForm.fields.addressee' | translate } }}</span>
+            <span *ngIf="addressForm.controls['addressee'].errors?.maxlength">{{ 'addressForm.errors.maxLength' | translate: { max: 50 } }}</span>
+            <span *ngIf="addressForm.controls['addressee'].errors?.minlength">{{ 'addressForm.errors.minLength' | translate: { min: 1 } }}</span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-field">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>{{ 'addressForm.fields.street1' | translate }}</mat-label>
+          <input matInput id="street1" formControlName="street1" />
+          <mat-error *ngIf="addressForm.controls['street1'].invalid && addressForm.controls['street1'].touched">
+            <span *ngIf="addressForm.controls['street1'].errors?.required">{{ 'addressForm.errors.required' | translate: { field: 'addressForm.fields.street1' | translate } }}</span>
+            <span *ngIf="addressForm.controls['street1'].errors?.maxlength">{{ 'addressForm.errors.maxLength' | translate: { max: 50 } }}</span>
+            <span *ngIf="addressForm.controls['street1'].errors?.minlength">{{ 'addressForm.errors.minLength' | translate: { min: 1 } }}</span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-field">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>{{ 'addressForm.fields.street2' | translate }}</mat-label>
+          <input matInput id="street2" formControlName="street2" />
+          <mat-error *ngIf="addressForm.controls['street2'].invalid && addressForm.controls['street2'].touched">
+            <span *ngIf="addressForm.controls['street2'].errors?.maxlength">{{ 'addressForm.errors.maxLength' | translate: { max: 50 } }}</span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-field">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>{{ 'addressForm.fields.town' | translate }}</mat-label>
+          <input matInput id="town" formControlName="town" />
+          <mat-error *ngIf="addressForm.controls['town'].invalid && addressForm.controls['town'].touched">
+            <span *ngIf="addressForm.controls['town'].errors?.required">{{ 'addressForm.errors.required' | translate: { field: 'addressForm.fields.town' | translate } }}</span>
+            <span *ngIf="addressForm.controls['town'].errors?.maxlength">{{ 'addressForm.errors.maxLength' | translate: { max: 50 } }}</span>
+            <span *ngIf="addressForm.controls['town'].errors?.minlength">{{ 'addressForm.errors.minLength' | translate: { min: 1 } }}</span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-field">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>{{ 'addressForm.fields.county' | translate }}</mat-label>
+          <input matInput id="county" formControlName="county" />
+          <mat-error *ngIf="addressForm.controls['county'].invalid && addressForm.controls['county'].touched">
+            <span *ngIf="addressForm.controls['county'].errors?.maxlength">{{ 'addressForm.errors.maxLength' | translate: { max: 50 } }}</span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-field">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>{{ 'addressForm.fields.postcode' | translate }}</mat-label>
+          <input matInput id="postcode" formControlName="postcode" />
+          <mat-error *ngIf="addressForm.controls['postcode'].invalid && addressForm.controls['postcode'].touched">
+            <span *ngIf="addressForm.controls['postcode'].errors?.required">{{ 'addressForm.errors.required' | translate: { field: 'addressForm.fields.postcode' | translate } }}</span>
+            <span *ngIf="addressForm.controls['postcode'].errors?.maxlength">{{ 'addressForm.errors.maxLength' | translate: { max: 8 } }}</span>
+            <span *ngIf="addressForm.controls['postcode'].errors?.minlength">{{ 'addressForm.errors.minLength' | translate: { min: 5 } }}</span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="addressForm.invalid || data.addAddressLoading">
+        <mat-spinner diameter="20" *ngIf="data.addAddressLoading"></mat-spinner>
+        <span *ngIf="!data.addAddressLoading">{{ 'addressForm.submit' | translate }}</span>
+      </button>
+    </form>
+  </mat-card>
+
+</div>

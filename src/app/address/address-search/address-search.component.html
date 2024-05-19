@@ -1,0 +1,17 @@
+<div class="address-search-container" *ngIf="{loadAddressLoading: loadAddressLoading$ | async} as data">
+  <mat-card>
+    <form (ngSubmit)="onSearch()">
+      <mat-form-field appearance="fill">
+        <mat-label>{{ 'addressSearch.form.addressId' | translate }}</mat-label>
+        <input matInput [(ngModel)]="addressId" name="addressId" required>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="data.loadAddressLoading">
+        <mat-spinner diameter="20" *ngIf="data.loadAddressLoading"></mat-spinner>
+        <span *ngIf="!data.loadAddressLoading">{{ 'addressSearch.form.search' | translate }}</span>
+      </button>
+    </form>
+    <div *ngIf="address$ | async as address">
+      <app-address-details [address]="address"></app-address-details>
+    </div>
+  </mat-card>
+</div>

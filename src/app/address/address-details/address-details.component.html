@@ -1,0 +1,9 @@
+<div class="address-detail-container" *ngIf="address">
+  <h2>{{ 'addressDetail.title' | translate }}</h2>
+  <p><strong>{{ 'addressDetail.fields.addressee' | translate }}:</strong> {{ address.addressee }}</p>
+  <p><strong>{{ 'addressDetail.fields.street1' | translate }}:</strong> {{ address.street1 }}</p>
+  <p><strong>{{ 'addressDetail.fields.street2' | translate }}:</strong> {{ address.street2 }}</p>
+  <p><strong>{{ 'addressDetail.fields.town' | translate }}:</strong> {{ address.town }}</p>
+  <p><strong>{{ 'addressDetail.fields.county' | translate }}:</strong> {{ address.county }}</p>
+  <p><strong>{{ 'addressDetail.fields.postcode' | translate }}:</strong> {{ address.postcode }}</p>
+</div>
